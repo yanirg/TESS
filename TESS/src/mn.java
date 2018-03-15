@@ -37,7 +37,7 @@ public class mn {
 		driver.get("https://wizzair.com/en-gb/flights/timetable#/");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
-	
+	//////////
 		
 		TimeTableAFunc tt = new TimeTableAFunc(driver);
 		tt.printPriceDeptRtnMaxPeriod("Tel-Aviv","London Luton",true);
