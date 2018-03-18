@@ -54,7 +54,7 @@ public class form1 {
 	 * Create the application.
 	 */
 	public form1() {
-		System.out.println("kkk");
+		
 		initialize();
 		hm.put("max","0");
 	}
