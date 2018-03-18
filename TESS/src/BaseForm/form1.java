@@ -22,6 +22,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.Button;
 
 public class form1 {
 
@@ -30,6 +31,7 @@ public class form1 {
 	private JTextField textField;
 	private JButton btnNewButton;
 	private Map<String, String> hm = new HashMap<>();
+	private JTextField maxPrice;
 
 
 	/**
@@ -52,8 +54,9 @@ public class form1 {
 	 * Create the application.
 	 */
 	public form1() {
-		
+		System.out.println("kkk");
 		initialize();
+		hm.put("max","0");
 	}
 
 	/**
@@ -100,6 +103,7 @@ public class form1 {
 		textField.setColumns(10);
 		
 		btnNewButton = new JButton("applay");
+
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -110,6 +114,21 @@ public class form1 {
 	
 		btnNewButton.setBounds(182, 168, 115, 60);
 		frame.getContentPane().add(btnNewButton);
+		
+		maxPrice = new JTextField();
+		maxPrice.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				hm.replace("max",maxPrice.getText());
+			}
+		});
+		maxPrice.setBounds(46, 188, 86, 20);
+		frame.getContentPane().add(maxPrice);
+		maxPrice.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("max price");
+		lblNewLabel_2.setBounds(46, 168, 46, 14);
+		frame.getContentPane().add(lblNewLabel_2);
 	}
 	
 	private void webScrap(){
